@@ -8,7 +8,11 @@ module.exports = {
       colors: {
         "primary-gray" : "#F7F7F7;",
         "primary-yellow" : "#FFE68C",
-      }
+        "accent-orange" : "#f97316",
+        "accent-yellow" : "#fcd34d",
+        "button-orange" : "#F85A25",
+        "button-gray" : "#EEF1F7",
+      },
     },
   },
   plugins: [],
