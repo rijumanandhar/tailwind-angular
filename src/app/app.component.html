@@ -56,6 +56,11 @@
   </div>
 </ng-template>
 
+<!-- template for discover button since this is being reused -->
+<ng-template #discoverProductButton>
+  <button class="bg-button-orange py-2 px-10 rounded-full border-4 border-black text-xl font-bold">Discover Product</button>
+</ng-template>
+
 <!-- templates for cards -->
 <!-- card1 -->
 <ng-template #card1Description>
@@ -69,14 +74,14 @@
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed reprehenderit provident aspernatur laboriosam, corrupti saepe esse in dolores ea quibusdam dignissimos ad facilis animi assumenda ipsum adipisci accusamus minima vel.
         </p>
         <div class="hidden md:block">
-          <p>button</p>
+          <ng-container *ngTemplateOutlet="discoverProductButton"></ng-container>
         </div>
       </div>
       <div class="mt-3 md:p-10">
         <ng-container *ngTemplateOutlet="accordian"></ng-container>
       </div>
       <div class="md:hidden m-4">
-        <p>button</p>
+        <ng-container *ngTemplateOutlet="discoverProductButton"></ng-container>
       </div>
     </div>
   </div>
