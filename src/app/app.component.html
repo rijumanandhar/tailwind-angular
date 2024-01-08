@@ -1,3 +1,29 @@
+<!-- templates for cards -->
+<!-- card1 -->
+<ng-template #card1Description>
+  <div class="bg-primary-yellow rounded-lg p-5 md:p-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-x-40">
+      <div class="md:p-10">
+        <h1 class="text-2xl md:text-5xl font-bold text-left">
+          Product title
+        </h1>
+        <p class="text-sm md:text-xl mt-3 md:py-5">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed reprehenderit provident aspernatur laboriosam, corrupti saepe esse in dolores ea quibusdam dignissimos ad facilis animi assumenda ipsum adipisci accusamus minima vel.
+        </p>
+        <div class="hidden md:block">
+          <p>button</p>
+        </div>
+      </div>
+      <div class="mt-3 md:p-10">
+        <p>accordian</p>
+      </div>
+      <div class="md:hidden m-4">
+        <p>button</p>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
 <h1 class="text-5xl mt-5 font-bold text-center">
   Section title
 </h1>
@@ -7,6 +33,7 @@
 </h3>
 
 <div class="grid grid-cols-1 md:grid-cols-4 gap-4 m-10">
+  <!-- card1 -->
   <div class="bg-white rounded-lg border-b-4 border-accent-yellow md:border-2 md:border-gray-200">
     <div class="md:hidden">
       <div class="grid grid-cols-6  p-5">
@@ -15,7 +42,7 @@
         <button (click)="clickCard1()"><h2 class="text-right"> + </h2></button>
       </div>
         <div *ngIf="card1view">
-          <p>hello</p>
+          <ng-container *ngTemplateOutlet="card1Description"></ng-container>
         </div>
     </div>
     <div class="hidden md:block">
@@ -24,12 +51,27 @@
         <img src="../assets/1.png" class="h-15 w-15" alt="file-icon">
       </div>
       <p class="pb-5 px-5 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      <button class="bg-accent-yellow button-border p-4 text-lg">Discover +</button>
+      <button class="bg-button-gray button-border p-4 text-lg" [class.active-btn]="card1view" (click)="clickCard1()">Discover +</button>
     </div>
   </div>
-  <div class="bg-white p-5 rounded-lg border-b-4 border-accent-yellow">02</div>
-  <div class="bg-white p-5 rounded-lg border-b-4 border-accent-yellow">03</div>
-  <div class="bg-white p-5 rounded-lg border-b-4 border-accent-yellow">04</div>
+
+  <!-- card2 -->
+  <div class="bg-white rounded-lg border-b-4 border-accent-yellow md:border-2 md:border-gray-200">
+   2
+  </div>
+
+  <!-- card 3 -->
+  <div class="bg-white rounded-lg border-b-4 border-accent-yellow md:border-2 md:border-gray-200">
+    3
+  </div>
+
+  <!-- card 4 -->
+  <div class="bg-white rounded-lg border-b-4 border-accent-yellow md:border-2 md:border-gray-200">
+    4
+  </div>
 </div>
-<div class="m-10">
+<div class="m-10 hidden md:block">
+  <div *ngIf="card1view">
+    <ng-container *ngTemplateOutlet="card1Description"></ng-container>
+  </div>
 </div>
