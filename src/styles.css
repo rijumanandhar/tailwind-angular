@@ -1,3 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*{
+    font-family: 'Montserrat';
+}
+
+@layer components {
+    .button-border{
+        border-top-right-radius: 20px;
+    }
+
+    .active-btn{
+        background-color: theme('colors.accent-yellow')!important;
+        border-bottom: 6px solid theme("colors.accent-blue");
+        border-right: 6px solid theme("colors.accent-blue") ;
+    }
+}

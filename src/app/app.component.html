@@ -61,17 +61,16 @@
   <button class="bg-button-orange py-2 px-10 rounded-full border-4 border-black text-xl font-bold">Discover Product</button>
 </ng-template>
 
-<!-- templates for cards -->
-<!-- card1 -->
-<ng-template #card1Description>
+<!-- templates for cards since this is being reused-->
+<ng-template #cardDescription let-data="data">
   <div class="bg-primary-yellow rounded-lg p-5 md:p-10">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-x-40">
       <div class="md:p-10">
         <h1 class="text-2xl md:text-5xl font-bold text-left">
-          Product title
+          {{data.title}}
         </h1>
         <p class="text-sm md:text-xl mt-3 md:py-5">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed reprehenderit provident aspernatur laboriosam, corrupti saepe esse in dolores ea quibusdam dignissimos ad facilis animi assumenda ipsum adipisci accusamus minima vel.
+          {{data.description}}
         </p>
         <div class="hidden md:block">
           <ng-container *ngTemplateOutlet="discoverProductButton"></ng-container>
@@ -105,12 +104,12 @@
         <button (click)="clickCard1()"><h2 class="text-right"> + </h2></button>
       </div>
         <div *ngIf="card1view">
-          <ng-container *ngTemplateOutlet="card1Description"></ng-container>
+          <ng-container [ngTemplateOutlet]="cardDescription" [ngTemplateOutletContext]="{data: cards[0]}"></ng-container>
         </div>
     </div>
     <div class="hidden md:block">
       <div class="grid grid-cols-6 px-5 pt-5">
-        <h1 class="col-span-5 text-2xl font-bold">Card title</h1>
+        <h1 class="col-span-5 text-2xl font-bold  h-16">Card title</h1>
         <img src="../assets/1.png" class="h-15 w-15" alt="file-icon">
       </div>
       <p class="pb-5 px-5 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -120,21 +119,83 @@
 
   <!-- card2 -->
   <div class="bg-white rounded-lg border-b-4 border-accent-yellow md:border-2 md:border-gray-200">
-   2
+    <div class="md:hidden">
+      <div class="grid grid-cols-6  p-5">
+        <img src="../assets/2.png" class="h-10 w-10" alt="file-icon">
+        <h1 class="col-span-4 text-2xl font-bold">Card title that goes 2 lines</h1>
+        <button (click)="clickCard2()"><h2 class="text-right"> + </h2></button>
+      </div>
+        <div *ngIf="card2view">
+          <ng-container [ngTemplateOutlet]="cardDescription" [ngTemplateOutletContext]="{data: cards[1]}"></ng-container>
+        </div>
+    </div>
+    <div class="hidden md:block">
+      <div class="grid grid-cols-6 px-5 pt-5">
+        <h1 class="col-span-5 text-2xl font-bold h-16">Card title that goes 2 lines</h1>
+        <img src="../assets/2.png" class="h-15 w-15" alt="file-icon">
+      </div>
+      <p class="pb-5 px-5 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      <button class="bg-button-gray button-border p-4 text-lg" [class.active-btn]="card2view" (click)="clickCard2()">Discover +</button>
+    </div>
   </div>
 
   <!-- card 3 -->
   <div class="bg-white rounded-lg border-b-4 border-accent-yellow md:border-2 md:border-gray-200">
-    3
+    <div class="md:hidden">
+      <div class="grid grid-cols-6  p-5">
+        <img src="../assets/3.png" class="h-10 w-10" alt="file-icon">
+        <h1 class="col-span-4 text-2xl font-bold">Card title</h1>
+        <button (click)="clickCard3()"><h2 class="text-right"> + </h2></button>
+      </div>
+        <div *ngIf="card3view">
+          <ng-container [ngTemplateOutlet]="cardDescription" [ngTemplateOutletContext]="{data: cards[2]}"></ng-container>
+        </div>
+    </div>
+    <div class="hidden md:block">
+      <div class="grid grid-cols-6 px-5 pt-5">
+        <h1 class="col-span-5 text-2xl font-bold h-16">Card title</h1>
+        <img src="../assets/3.png" class="h-15 w-15" alt="file-icon">
+      </div>
+      <p class="pb-5 px-5 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      <button class="bg-button-gray button-border p-4 text-lg" [class.active-btn]="card3view" (click)="clickCard3()">Discover +</button>
+    </div>
   </div>
 
   <!-- card 4 -->
   <div class="bg-white rounded-lg border-b-4 border-accent-yellow md:border-2 md:border-gray-200">
-    4
+    <div class="md:hidden">
+      <div class="grid grid-cols-6  p-5">
+        <img src="../assets/4.png" class="h-10 w-10" alt="file-icon">
+        <h1 class="col-span-4 text-2xl font-bold">Card title that goes 2 lines</h1>
+        <button (click)="clickCard4()"><h2 class="text-right"> + </h2></button>
+      </div>
+        <div *ngIf="card4view">
+          <ng-container [ngTemplateOutlet]="cardDescription" [ngTemplateOutletContext]="{data: cards[3]}"></ng-container>
+        </div>
+    </div>
+    <div class="hidden md:block">
+      <div class="grid grid-cols-6 px-5 pt-5">
+        <h1 class="col-span-5 text-2xl font-bold h-16">Card title that goes 2 lines</h1>
+        <img src="../assets/4.png" class="h-15 w-15" alt="file-icon">
+      </div>
+      <p class="pb-5 px-5 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      <button class="bg-button-gray button-border p-4 text-lg" [class.active-btn]="card4view" (click)="clickCard4()">Discover +</button>
+    </div>
   </div>
 </div>
+
+<!-- display tab -->
 <div class="m-10 hidden md:block">
   <div *ngIf="card1view">
-    <ng-container *ngTemplateOutlet="card1Description"></ng-container>
+    <ng-container [ngTemplateOutlet]="cardDescription" [ngTemplateOutletContext]="{data: cards[0]}"></ng-container>
+  </div>
+  <div *ngIf="card2view">
+    <ng-container [ngTemplateOutlet]="cardDescription" [ngTemplateOutletContext]="{data: cards[1]}"></ng-container>
+  </div>
+  <div *ngIf="card3view">
+    <ng-container [ngTemplateOutlet]="cardDescription" [ngTemplateOutletContext]="{data: cards[2]}"></ng-container>
+  </div>
+  <div *ngIf="card4view">
+    <ng-container [ngTemplateOutlet]="cardDescription" [ngTemplateOutletContext]="{data: cards[3]}"></ng-container>
   </div>
 </div>

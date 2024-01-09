@@ -11,18 +11,37 @@ export interface T {
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'tailwind-angular';
+  title = 'tailwind-practise';
   card1view = true;
   card2view = false;
   card3view = false;
   card4view = false;
-
+  
   accordian1view = false;
   accordian2view = false;
   accordian3view = false;
   accordian4view = false;
   accordian5view = false;
 
+  public cards: T[] = [
+    {
+      title:"Product title 1",
+      description:"Product title 1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed reprehenderit provident aspernatur laboriosam, corrupti saepe esse in dolores ea quibusdam dignissimos ad facilis animi assumenda ipsum adipisci accusamus minima vel.",
+    },
+    {
+      title:"Product title 2",
+      description:"Product title 2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed reprehenderit provident aspernatur laboriosam, corrupti saepe esse in dolores ea quibusdam dignissimos ad facilis animi assumenda ipsum adipisci accusamus minima vel.",
+    },
+    {
+      title:"Product title 3",
+      description:"Product title 3. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed reprehenderit provident aspernatur laboriosam, corrupti saepe esse in dolores ea quibusdam dignissimos ad facilis animi assumenda ipsum adipisci accusamus minima vel.",
+    },
+    {
+      title:"Product title 4",
+      description:"Product title 4. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed reprehenderit provident aspernatur laboriosam, corrupti saepe esse in dolores ea quibusdam dignissimos ad facilis animi assumenda ipsum adipisci accusamus minima vel.",
+    },
+  ]
+  
   public accordians:T[] = [
     {
       title: "Accordian title 1",
@@ -54,6 +73,7 @@ export class AppComponent {
     this.accordian5view = false;
   }
 
+
   public resetCards(){
     this.card1view = false;
     this.card2view = false;
@@ -64,7 +84,22 @@ export class AppComponent {
   public clickCard1(){
     this.resetCards();
     this.card1view = true;
-  }
+  } 
+
+  public clickCard2(){
+    this.resetCards();
+    this.card2view = true;
+  } 
+
+  public clickCard3(){
+    this.resetCards();
+    this.card3view = true;
+  } 
+
+  public clickCard4(){
+    this.resetCards();
+    this.card4view = true;
+  } 
 
   public displayAccordian1(){
     if (this.accordian1view){
