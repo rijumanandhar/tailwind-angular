@@ -83,7 +83,7 @@
 
 <!-- template for discover button since this is being reused -->
 <ng-template #discoverProductButton>
-  <button class="bg-button-orange py-2 px-10 rounded-full border-4 border-black text-xl font-bold">Discover Product</button>
+  <button class="bg-button-orange py-2 px-10 hover:py-5 hover:px-16 rounded-full border-4 border-black text-xl font-bold">Discover Product</button>
 </ng-template>
 
 <!-- templates for cards since this is being reused-->
@@ -126,7 +126,7 @@
       <div class="grid grid-cols-6  p-5">
         <img src="../assets/1.png" class="h-10 w-10" alt="file-icon">
         <h1 class="col-span-4 text-2xl font-bold">Card title</h1>
-        <button (click)="clickCard1()"><h2 class="text-right"> + </h2></button>
+        <button (click)="clickCard1()"><h2 class="text-right font-bold"> + </h2></button>
       </div>
         <div *ngIf="card1view">
           <ng-container [ngTemplateOutlet]="cardDescription" [ngTemplateOutletContext]="{data: cards[0]}"></ng-container>
@@ -138,7 +138,7 @@
         <img src="../assets/1.png" class="h-15 w-15" alt="file-icon">
       </div>
       <p class="pb-5 px-5 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      <button class="bg-button-gray button-border font-bold p-4 text-lg" [class.active-btn]="card1view" (click)="clickCard1()">
+      <button class="bg-button-gray hover:bg-accent-yellow button-border font-bold p-4 text-lg" [class.active-btn]="card1view" (click)="clickCard1()">
         Discover 
         <div class="float-right p-1">
           <svg class="h-4 w-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 14">
@@ -155,7 +155,7 @@
       <div class="grid grid-cols-6  p-5">
         <img src="../assets/2.png" class="h-10 w-10" alt="file-icon">
         <h1 class="col-span-4 text-2xl font-bold">Card title that goes 2 lines</h1>
-        <button (click)="clickCard2()"><h2 class="text-right"> + </h2></button>
+        <button (click)="clickCard2()"><h2 class="text-right font-bold"> + </h2></button>
       </div>
         <div *ngIf="card2view">
           <ng-container [ngTemplateOutlet]="cardDescription" [ngTemplateOutletContext]="{data: cards[1]}"></ng-container>
@@ -167,7 +167,7 @@
         <img src="../assets/2.png" class="h-15 w-15" alt="file-icon">
       </div>
       <p class="pb-5 px-5 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      <button class="bg-button-gray button-border font-bold p-4 text-lg" [class.active-btn]="card2view" (click)="clickCard2()">
+      <button class="bg-button-gray hover:bg-accent-yellow button-border font-bold p-4 text-lg" [class.active-btn]="card2view" (click)="clickCard2()">
         Discover
         <div class="float-right p-1">
           <svg class="h-4 w-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 14">
@@ -184,7 +184,7 @@
       <div class="grid grid-cols-6  p-5">
         <img src="../assets/3.png" class="h-10 w-10" alt="file-icon">
         <h1 class="col-span-4 text-2xl font-bold">Card title</h1>
-        <button (click)="clickCard3()"><h2 class="text-right"> + </h2></button>
+        <button (click)="clickCard3()"><h2 class="text-right font-bold"> + </h2></button>
       </div>
         <div *ngIf="card3view">
           <ng-container [ngTemplateOutlet]="cardDescription" [ngTemplateOutletContext]="{data: cards[2]}"></ng-container>
@@ -196,7 +196,7 @@
         <img src="../assets/3.png" class="h-15 w-15" alt="file-icon">
       </div>
       <p class="pb-5 px-5 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      <button class="bg-button-gray button-border font-bold p-4 text-lg" [class.active-btn]="card3view" (click)="clickCard3()">
+      <button class="bg-button-gray hover:bg-accent-yellow button-border font-bold p-4 text-lg" [class.active-btn]="card3view" (click)="clickCard3()">
         Discover
         <div class="float-right p-1">
           <svg class="h-4 w-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 14">
@@ -213,7 +213,7 @@
       <div class="grid grid-cols-6  p-5">
         <img src="../assets/4.png" class="h-10 w-10" alt="file-icon">
         <h1 class="col-span-4 text-2xl font-bold">Card title that goes 2 lines</h1>
-        <button (click)="clickCard4()"><h2 class="text-right"> + </h2></button>
+        <button (click)="clickCard4()"><h2 class="text-right font-bold"> + </h2></button>
       </div>
         <div *ngIf="card4view">
           <ng-container [ngTemplateOutlet]="cardDescription" [ngTemplateOutletContext]="{data: cards[3]}"></ng-container>
@@ -225,7 +225,7 @@
         <img src="../assets/4.png" class="h-15 w-15" alt="file-icon">
       </div>
       <p class="pb-5 px-5 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      <button class="bg-button-gray button-border font-bold p-4 text-lg" [class.active-btn]="card4view" (click)="clickCard4()">
+      <button class="bg-button-gray hover:bg-accent-yellow button-border font-bold p-4 text-lg" [class.active-btn]="card4view" (click)="clickCard4()">
         Discover
         <div class="float-right p-1">
           <svg class="h-4 w-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 14">
